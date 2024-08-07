@@ -35,10 +35,10 @@ module tt_um_frequency_counter (
 
   // All output pins must be assigned. If not used, assign to 0.
   assign uo_out[7] = ui_in[7];
-  assign uio_out = 0;
-  assign uio_oe  = 0;
+  assign uio_out = 8'h00;
+  assign uio_oe  = 8'h00;
 
   // List all unused inputs to prevent warnings
-  wire _unused = &{ena, ui_in[6:0], 1'b0};
+  wire _unused = &{ena, ui_in[6:0], uio_in[7:0], 1'b0};
 
 endmodule
