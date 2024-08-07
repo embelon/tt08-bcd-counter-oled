@@ -1,11 +1,11 @@
 # Tiny Tapeout project information
 project:
   title:        "Frequency Counter SSD1306 OLED"      # Project title
-  author:       "Pawel Sitarz (embelon)"      # Your name
-  discord:      ""      # Your discord username, for communication and automatically assigning you a Tapeout role (optional)
-  description:  ""      # One line description of what your project does
+  author:       "Pawel Sitarz (embelon)"              # Your name
+  discord:      "embelon"                             # Your discord username, for communication and automatically assigning you a Tapeout role (optional)
+  description:  "Simple Frequency Counter displaying result on SSD1306 SPI OLED"  # One line description of what your project does
   language:     "SystemVerilog" # other examples include SystemVerilog, Amaranth, VHDL, etc
-  clock_hz:     1000000       # Clock frequency in Hz (or 0 if not applicable)
+  clock_hz:     1000000         # Clock frequency in Hz (or 0 if not applicable)
 
   # How many tiles your design occupies? A single tile is about 167x108 uM.
   tiles: "1x1"          # Valid values: 1x1, 1x2, 2x2, 3x2, 4x2, 6x2 or 8x2
