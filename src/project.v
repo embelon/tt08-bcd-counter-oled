@@ -16,31 +16,21 @@ module tt_um_frequency_counter (
     input  wire       rst_n     // reset_n - low to reset
 );
 
-  `define clk_x       ui_in[0]
-
-  `define oled_rstn   uo_out[0]
-  `define oled_vbatn  uo_out[1]
-  `define oled_vcdn   uo_out[2]
-  `define oled_csn    uo_out[3]
-  `define oled_dc     uo_out[4]
-  `define oled_clk    uo_out[5]
-  `define oled_mosi   uo_out[6]
-
   oled_frequency_counter counter
   (
     .clk_ref_in(clk),
     .reset_in(!rst_n),
 
-    .clk_x_in(clk_x),
+    .clk_x_in(ui_in[0]),
 
 	  // Interface to controll SSD1306 OLED Display
-	  .oled_rstn_out(oled_rstn),
-	  .oled_vbatn_out(oled_vbatn),	
-	  .oled_vcdn_out(oled_vcdn),
-	  .oled_csn_out(oled_csn),
-	  .oled_dc_out(oled_dc),
-	  .oled_clk_out(oled_clk),
-	  .oled_mosi_out(oled_mosi)
+	  .oled_rstn_out(uo_out[0]),
+	  .oled_vbatn_out(uo_out[1]),	
+	  .oled_vcdn_out(uo_out[2]),
+	  .oled_csn_out(uo_out[3]),
+	  .oled_dc_out(uo_out[4]),
+	  .oled_clk_out(uo_out[5]),
+	  .oled_mosi_out(uo_oled[6])
   );
 
   // All output pins must be assigned. If not used, assign to 0.
