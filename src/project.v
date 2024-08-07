@@ -30,7 +30,7 @@ module tt_um_frequency_counter (
 	  .oled_csn_out(uo_out[3]),
 	  .oled_dc_out(uo_out[4]),
 	  .oled_clk_out(uo_out[5]),
-	  .oled_mosi_out(uo_oled[6])
+	  .oled_mosi_out(uo_out[6])
   );
 
   // All output pins must be assigned. If not used, assign to 0.
