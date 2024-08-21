@@ -26,7 +26,9 @@ project:
     - "ssd1306_oled_frequency_counter/src/decoder_bin_to_7seg.sv"
     - "ssd1306_oled_frequency_counter/src/decoder_7seg_to_21x32pix.sv"
     - "ssd1306_oled_frequency_counter/src/counter_bcd_1digit.sv"
+    - "ssd1306_oled_frequency_counter/src/counter_bcd_1digit_async_rst.sv"
     - "ssd1306_oled_frequency_counter/src/counter_bcd_Ndigits.sv"
+    - "ssd1306_oled_frequency_counter/src/counter_bcd_Ndigits_async_rst.sv"
     - "ssd1306_oled_frequency_counter/src/data_streamer.sv"
     - "ssd1306_oled_frequency_counter/src/oled_frequency_counter.sv"
 
