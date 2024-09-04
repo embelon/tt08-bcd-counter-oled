@@ -5,15 +5,17 @@
 SIM ?= icarus
 TOPLEVEL_LANG ?= verilog
 SRC_DIR = $(PWD)/../src
-MODULE_SRC_DIR = $(PWD)/../src/ssd1306_oled_frequency_counter/src
 PROJECT_SOURCES = project.v
+MODULE_SRC_DIR = $(PWD)/../src/ssd1306_oled_frequency_counter/src
+MODULE_SRC = shift_register.sv spi.sv ssd1306_microcode_rom.sv ssd1306_microcode_exec.sv ssd1306_driver.sv counter_bcd_1digit.sv counter_bcd_Ndigits.sv counter_bcd_1digit_async_rst.sv counter_bcd_Ndigits_async_rst.sv decoder_bin_to_7seg.sv decoder_7seg_to_21x32pix.sv data_streamer.sv oled_frequency_counter.sv
 
 ifneq ($(GATES),yes)
 
 # RTL simulation:
 SIM_BUILD				= sim_build/rtl
-VERILOG_SOURCES += $(addprefix $(MODULE_SRC_DIR)/,$(SRC_DIR)/,$(PROJECT_SOURCES))
-COMPILE_ARGS 		+= -I$(SRC_DIR)
+VERILOG_SOURCES += $(addprefix $(SRC_DIR)/,$(PROJECT_SOURCES))
+VERILOG_SOURCES += $(addprefix $(MODULE_SRC_DIR)/,$(MODULE_SRC))
+COMPILE_ARGS 		+= -I$(MODULE_SRC_DIR) -I$(SRC_DIR)
 
 else
 
